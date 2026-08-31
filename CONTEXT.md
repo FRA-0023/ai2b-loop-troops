@@ -1,17 +1,30 @@
-# Hackathon Context
+---
+type: agent-context
+status: initialized
+---
 
-**Event:** AI2B Games - Milano Stage (Sept 8, 2026)
-**Team:** Loop Troops
-**Members:** 
-- Pallab Mondal (AI)
-- Osama Haider (Tech Integrator/Web)
-- Colombini Francesco (PM/Pitch)
+# ?? Agent Operational Context (Fresh Context)
 
-## Current Status
-- [x] Repository initialized with boilerplate.
-- [ ] Waiting for the random track and dataset on the day of the event.
+## ?? Primary Objective (Hackathon Phase 0)
+- Maintain the boilerplate structure.
+- Stand by until the event day (Sept 8, 2026). Once the random track and dataset are provided, update this objective to reflect the specific MVP to build.
 
-## Active Directives
-- **Time Constraint:** 8 hours sprint.
-- **Tech constraint:** Streamlit frontend + LLM API backend. No complex SPA setups.
-- **Objective:** Maximize UI, UX, and Pitch quality. Ensure the dataset is explicitly loaded and processed.
+## ?? Current State
+- **Phase:** Pre-event setup (Boilerplate only).
+- **Latest Action:** Repository initialized with Streamlit, .gitignore, and AI API wrappers.
+- **Working Directory:** C:\Documenti\UNIMIB\AI2B - Loop Troops
+
+## ??? Tech Stack & Constraints (Agent Guidelines)
+- **Strict UI Constraint:** Only use streamlit to build the frontend. Do NOT attempt to build a React/Next.js SPA.
+- **AI Integration:** Use langchain with OpenAI/Anthropic in i_core/llm_client.py.
+- **Data Processing:** Use pandas for EDA and dataset ingestion.
+- **Negative Constraints:** Do not commit datasets, .env files, or heavy models (enforced by .gitignore).
+
+## ?? Active Blockers
+- None. Waiting for the hackathon dataset and track announcement.
+
+## ?? Next Steps (For the Agent on Event Day)
+1. Parse the provided hackathon dataset (.csv / .json).
+2. Update PROJECT.md with the specific architecture chosen for the random track.
+3. Implement the real API calls in i_core/llm_client.py.
+4. Build the data ingestion UI in pp/main.py.
