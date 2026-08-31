@@ -1,4 +1,4 @@
-# ?? AI2B Hackathon - Loop Troops
+# AI2B Hackathon - Loop Troops
 
 **Event:** AI2B Games - Milano Stage (Sept 8, 2026)
 **Team:** Loop Troops
