@@ -1,0 +1,41 @@
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*.class
+.pytest_cache/
+
+# Jupyter / Data Science / Machine Learning
+.ipynb_checkpoints/
+*.parquet
+*.csv
+*.tsv
+*.json
+*.sqlite3
+*.db
+*.pt
+*.pth
+*.h5
+*.pkl
+*.model
+
+# Marketing / Media / Design
+*.mp4
+*.mov
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.fig
+
+# MacOS
+.DS_Store
+
+# Ignore all contents of data folder, except .gitkeep
+/data/*
+!/data/.gitkeep
