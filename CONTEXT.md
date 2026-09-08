@@ -22,6 +22,8 @@ status: initialized
   - Coding / Architecture: `dev-backend`
   - Data Science / EDA / ML: `data-science`
   - Business / Copy / Pitch: `marketing-strategy`
+  - Business & Strategy: `business-career`
+  - Economics & Financial Markets: `economics-finance-and-markets`
 - **Negative Constraints:** Do not commit datasets, .env files, or heavy models (enforced by .gitignore).
 
 ## ?? Active Blockers
