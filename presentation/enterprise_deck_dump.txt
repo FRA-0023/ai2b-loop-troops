@@ -1,0 +1,223 @@
+Total slides: 7
+
+
+==================== SLIDE 1 ====================
+  Shape 0 (Left=0.80, Top=0.70, W=4.00, H=0.30) [Text]:
+FINSIGHT AI
+  Shape 1 (Left=0.80, Top=2.00, W=11.73, H=0.35) [Text]:
+AUTONOMOUS SME CREDIT READINESS & CAPITAL SIZING COPILOT
+  Shape 2 (Left=0.50, Top=2.42, W=12.33, H=1.45) [Text]:
+FinSight AI: Pre-Underwriting
+European SME Debt in 14 Seconds.
+  Shape 3 (Left=1.60, Top=4.28, W=10.13, H=0.60) [Text]:
+Turning balance sheets, central bank NPL metrics, and ESG disclosures into certified bank dossiers.
+  Shape 5 (Left=0.99, Top=5.55, W=3.55, H=0.62) [Text]:
+IN-MEMORY DUCKDB 1.0
+  Shape 6 (Left=4.89, Top=5.55, W=3.55, H=0.62) [Text]:
+BANCA D'ITALIA NPL FUSE
+  Shape 7 (Left=8.79, Top=5.55, W=3.55, H=0.62) [Text]:
+EBA GL/2020/06 CERTIFIED
+
+==================== SLIDE 2 ====================
+  Shape 0 (Left=0.80, Top=0.42, W=3.00, H=0.28) [Text]:
+FINSIGHT AI
+  Shape 1 (Left=10.93, Top=0.42, W=1.60, H=0.28) [Text]:
+02 / 6
+  Shape 2 (Left=0.80, Top=0.86, W=11.73, H=0.30) [Text]:
+PROBLEM & MARKET FAILURE
+  Shape 3 (Left=0.80, Top=1.22, W=11.73, H=0.95) [Text]:
+Why 40% of Creditworthy SMEs Face Rejection or Rate Spikes
+  Shape 5 (Left=1.15, Top=2.95, W=0.55, H=0.55) [Text]:
+01
+  Shape 6 (Left=1.15, Top=3.80, W=2.94, H=0.80) [Text]:
+40%
+  Shape 7 (Left=1.15, Top=4.72, W=2.94, H=0.55) [Text]:
+THE INFORMATION VOID
+  Shape 9 (Left=1.15, Top=5.58, W=2.94, H=0.95) [Text]:
+SMEs apply blind without provincial default benchmarking.
+  Shape 11 (Left=5.19, Top=2.95, W=0.55, H=0.55) [Text]:
+02
+  Shape 12 (Left=5.19, Top=3.80, W=2.94, H=0.80) [Text]:
+3 WEEKS
+  Shape 13 (Left=5.19, Top=4.72, W=3.09, H=0.55) [Text]:
+THE 3-WEEK BLACK BOX
+  Shape 15 (Left=5.19, Top=5.58, W=2.94, H=0.95) [Text]:
+Manual re-keying stalls CapEx while competitors move.*
+  Shape 17 (Left=9.24, Top=2.95, W=0.55, H=0.55) [Text]:
+03
+  Shape 18 (Left=9.24, Top=3.80, W=2.94, H=0.80) [Text]:
+€10K+
+  Shape 19 (Left=9.24, Top=4.72, W=2.94, H=0.55) [Text]:
+THE ESG PENALTY
+  Shape 21 (Left=9.24, Top=5.58, W=2.94, H=0.95) [Text]:
+Lost in green interest discounts due to unverifiable sustainability data.**
+  Shape 22 (Left=3.95, Top=6.86, W=5.29, H=0.49) [Text]:
+*https://www.ecb.europa.eu/stats/ecb_surveys/safe/html/index.en.html**https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32022L2464
+
+==================== SLIDE 3 ====================
+  Shape 0 (Left=0.80, Top=0.42, W=3.00, H=0.28) [Text]:
+FINSIGHT AI
+  Shape 1 (Left=10.93, Top=0.42, W=1.60, H=0.28) [Text]:
+03 / 6
+  Shape 2 (Left=0.80, Top=0.86, W=11.73, H=0.30) [Text]:
+ARCHITECTURE & DATA SOVEREIGNTY
+  Shape 3 (Left=0.80, Top=1.22, W=11.73, H=0.95) [Text]:
+The 4-Stage Deterministic Engine: Zero Cloud Leaks, Zero LLM Math
+  Shape 5 (Left=1.06, Top=2.85, W=1.98, H=0.55) [Text]:
+01
+  Shape 7 (Left=1.06, Top=3.73, W=1.98, H=0.60) [Text]:
+DUCKDB LAKEHOUSE
+  Shape 8 (Left=1.06, Top=4.35, W=1.98, H=1.45) [Text]:
+Columnar OLAP in RAM, sub-second balance sheet parsing.
+  Shape 11 (Left=4.14, Top=2.85, W=1.98, H=0.55) [Text]:
+02
+  Shape 13 (Left=4.14, Top=3.73, W=1.98, H=0.60) [Text]:
+CENTRAL BANK FUSION
+  Shape 14 (Left=4.14, Top=4.35, W=1.98, H=1.45) [Text]:
+Banca d'Italia provincial NPL (Milan 1.82%) + Open Data Lombardia (+4.1%).*
+  Shape 17 (Left=7.22, Top=2.85, W=1.98, H=0.55) [Text]:
+03
+  Shape 19 (Left=7.22, Top=3.73, W=1.98, H=0.60) [Text]:
+DETERMINISTIC MATH
+  Shape 20 (Left=7.22, Top=4.35, W=1.98, H=1.45) [Text]:
+Python CRO rules computing DSCR (2.96x) and leverage covenants.
+  Shape 23 (Left=10.29, Top=2.85, W=1.98, H=0.55) [Text]:
+04
+  Shape 25 (Left=10.29, Top=3.73, W=1.98, H=0.60) [Text]:
+GROUNDED RAG & SEAL
+  Shape 26 (Left=10.29, Top=4.35, W=1.98, H=1.45) [Text]:
+FastEmbed semantic extraction + SHA-256 cryptographic audit seal.
+  Shape 27 (Left=0.80, Top=6.15, W=11.73, H=0.35) [Text]:
+Deterministic financial math runs in Python + DuckDB — the LLM only performs grounded semantic extraction, never calculation.
+
+==================== SLIDE 4 ====================
+  Shape 0 (Left=0.80, Top=0.42, W=3.00, H=0.28) [Text]:
+FINSIGHT AI
+  Shape 1 (Left=10.93, Top=0.42, W=1.60, H=0.28) [Text]:
+04 / 6
+  Shape 2 (Left=0.80, Top=0.86, W=11.73, H=0.30) [Text]:
+LIVE PROOF & TIPPING POINT — ECOTEX MILANO
+  Shape 3 (Left=0.80, Top=1.22, W=11.73, H=0.57) [Text]:
+Optimizing Borrowing Boundaries in Real Time
+  Shape 5 (Left=1.00, Top=2.17, W=2.31, H=0.62) [Text]:
+95 / 100
+  Shape 6 (Left=1.00, Top=2.83, W=2.31, H=0.30) [Text]:
+FINANCIAL HEALTH
+  Shape 7 (Left=1.00, Top=3.13, W=2.31, H=0.30) [Text]:
+Prime Solvency
+  Shape 9 (Left=4.01, Top=2.17, W=2.31, H=0.62) [Text]:
+95 / 100
+  Shape 10 (Left=4.01, Top=2.83, W=2.31, H=0.30) [Text]:
+ESG ALIGNMENT
+  Shape 11 (Left=4.01, Top=3.13, W=2.31, H=0.30) [Text]:
+Top Decile Green
+  Shape 13 (Left=7.02, Top=2.17, W=2.31, H=0.62) [Text]:
+1.82%
+  Shape 14 (Left=7.02, Top=2.83, W=2.31, H=0.30) [Text]:
+MILAN PROVINCIAL NPL
+  Shape 15 (Left=7.02, Top=3.13, W=2.31, H=0.30) [Text]:
+-113 bps vs Italy
+  Shape 17 (Left=10.02, Top=2.17, W=2.31, H=0.62) [Text]:
+APPROVE
+  Shape 18 (Left=10.02, Top=2.83, W=2.31, H=0.30) [Text]:
+CERTIFIED OUTCOME
+  Shape 19 (Left=10.02, Top=3.13, W=2.31, H=0.30) [Text]:
+5.15% Fixed Prime*
+  Shape 21 (Left=1.15, Top=3.83, W=4.97, H=0.35) [Text]:
+OPTIMAL BASE — €750K
+  Shape 22 (Left=1.15, Top=4.13, W=4.97, H=0.60) [Text]:
+DSCR 2.96x → 100% Pre-Approval
+  Shape 23 (Left=1.15, Top=4.52, W=5.17, H=0.60) [Text]:
+Fixed at 5.15% prime, plus a 15% regional green grant on qualifying capex.
+  Shape 25 (Left=1.15, Top=5.55, W=4.97, H=0.35) [Text]:
+STRESS TEST — €1.0M+
+  Shape 26 (Left=1.15, Top=5.79, W=4.97, H=0.60) [Text]:
+DSCR 1.35x → REVIEW Triggered
+  Shape 27 (Left=1.15, Top=6.12, W=4.97, H=0.52) [Text]:
+Guidance: avoid pure debt — split into a €750k senior loan + €250k grant to hold prime pricing.
+  Shape 28 (Left=3.18, Top=6.93, W=7.60, H=0.29) [Text]:
+*https://www.eba.europa.eu/regulation-and-policy/credit-risk/guidelines-on-loan-origination-and-monitoring
+  Shape 29 (Left=8.37, Top=3.82, W=2.68, H=2.68) [Picture]: Immagine 32
+
+==================== SLIDE 5 ====================
+  Shape 0 (Left=0.80, Top=0.42, W=3.00, H=0.28) [Text]:
+FINSIGHT AI
+  Shape 1 (Left=10.93, Top=0.42, W=1.60, H=0.28) [Text]:
+05 / 6
+  Shape 2 (Left=0.80, Top=0.86, W=11.73, H=0.30) [Text]:
+BUSINESS MODEL
+  Shape 3 (Left=0.80, Top=1.22, W=11.73, H=0.95) [Text]:
+Distribution Through Corporate Accountants: Zero Direct CAC
+  Shape 5 (Left=1.15, Top=3.05, W=2.94, H=0.90) [Text]:
+0.5–1.0%
+  Shape 7 (Left=1.15, Top=4.38, W=2.94, H=0.50) [Text]:
+MONETIZATION
+  Shape 8 (Left=1.15, Top=4.92, W=2.94, H=1.40) [Text]:
+Success fee on loan drawdown — €5,000–€7,500 per closed deal.
+  Shape 10 (Left=5.19, Top=3.05, W=2.94, H=0.90) [Text]:
+120,000
+  Shape 12 (Left=5.19, Top=4.38, W=2.94, H=0.50) [Text]:
+CHANNEL FLYWHEEL
+  Shape 13 (Left=5.19, Top=4.92, W=2.94, H=1.40) [Text]:
+Italian accounting firms in reach. 1 partner delivers 25+ SME dossiers per year.*
+  Shape 15 (Left=9.24, Top=3.05, W=2.94, H=0.90) [Text]:
+>20x
+  Shape 17 (Left=9.24, Top=4.38, W=2.94, H=0.50) [Text]:
+UNIT ECONOMICS
+  Shape 18 (Left=9.24, Top=4.92, W=2.94, H=1.40) [Text]:
+CAC < €250 | LTV > €5,000 | LTV/CAC ratio.
+  Shape 19 (Left=5.74, Top=6.81, W=1.86, H=0.29) [Text]:
+*https://commercialisti.it/
+
+==================== SLIDE 6 ====================
+  Shape 0 (Left=0.80, Top=0.42, W=3.00, H=0.28) [Text]:
+FINSIGHT AI
+  Shape 1 (Left=10.93, Top=0.42, W=1.60, H=0.28) [Text]:
+06 / 6
+  Shape 2 (Left=0.80, Top=0.86, W=11.73, H=0.30) [Text]:
+EXECUTION ROADMAP & VISION
+  Shape 3 (Left=0.80, Top=1.22, W=11.73, H=0.95) [Text]:
+The 12-Month Path to the European SME Capital Gateway
+  Shape 7 (Left=1.10, Top=3.30, W=3.04, H=0.35) [Text]:
+MONTH 1
+  Shape 8 (Left=1.10, Top=3.68, W=3.04, H=0.65) [Text]:
+LOMBARDIA PILOT
+  Shape 9 (Left=1.10, Top=4.40, W=3.04, H=1.35) [Text]:
+5 accounting firms onboarded, 50 SMEs scored, €25M in volume originated.
+  Shape 12 (Left=5.14, Top=3.30, W=3.04, H=0.35) [Text]:
+MONTH 3
+  Shape 13 (Left=5.14, Top=3.68, W=3.04, H=0.65) [Text]:
+MULTI-LENDER MARKETPLACE
+  Shape 14 (Left=5.14, Top=4.40, W=3.04, H=1.35) [Text]:
+15 digital credit funds competing in real time for certified dossiers.
+  Shape 17 (Left=9.19, Top=3.30, W=3.04, H=0.35) [Text]:
+MONTH 12
+  Shape 18 (Left=9.19, Top=3.68, W=3.04, H=0.65) [Text]:
+CONTINUOUS TREASURY OS
+  Shape 19 (Left=9.19, Top=4.40, W=3.04, H=1.35) [Text]:
+Automated covenant monitoring, live at pilot scale across European markets.
+
+==================== SLIDE 7 ====================
+  Shape 0 (Left=0.80, Top=0.42, W=3.00, H=0.28) [Text]:
+FINSIGHT AI
+  Shape 1 (Left=10.93, Top=0.42, W=1.60, H=0.28) [Text]:
+06 / 6
+  Shape 2 (Left=0.80, Top=0.86, W=11.73, H=0.30) [Text]:
+US
+  Shape 3 (Left=0.80, Top=1.22, W=11.73, H=0.95) [Text]:
+Thank you
+  Shape 7 (Left=1.10, Top=3.30, W=3.04, H=0.35) [Text]:
+Data Science
+  Shape 8 (Left=1.10, Top=3.68, W=3.04, H=0.65) [Text]:
+Colombini Francesco
+  Shape 11 (Left=5.14, Top=3.30, W=3.04, H=0.35) [Text]:
+Data Science
+  Shape 12 (Left=5.14, Top=3.68, W=3.04, H=0.65) [Text]:
+Osama Haider
+  Shape 15 (Left=9.19, Top=3.30, W=3.04, H=0.35) [Text]:
+AI4ST
+  Shape 16 (Left=9.19, Top=3.68, W=3.04, H=0.65) [Text]:
+Pallab Mondal
+  Shape 17 (Left=5.83, Top=4.10, W=1.68, H=1.98) [Picture]: Immagine 22
+  Shape 18 (Left=9.97, Top=4.10, W=1.57, H=1.89) [Picture]: Immagine 24
+  Shape 19 (Left=1.76, Top=4.10, W=1.68, H=1.98) [Picture]: Immagine 26
