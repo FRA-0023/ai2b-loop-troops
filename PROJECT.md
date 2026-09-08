@@ -8,6 +8,11 @@ This document tracks the high-level architecture of our Hackathon project.
 * **AI Core:** OpenAI / Anthropic APIs (via custom wrappers or LangChain)
 * **Notebooks:** Jupyter (strictly for fast EDA, not for production code)
 
+## Active Skill Domains
+* **Coding & Backend:** `dev-backend` (cloud architecture, Docker Compose, Hexagonal Architecture, SOLID, testing, GNN recommenders)
+* **Data Science:** `data-science` (cleaning, validation, EDA, ML best practices, causal inference, Polars, visualization)
+* **Marketing & Strategy:** `marketing-strategy` (value proposition, pitch engineering, retention funnels, VOC mining)
+
 ## Architecture Diagram (Mental Model)
 1. **User** uploads the provided dataset.csv via the Streamlit interface.
 2. **Streamlit (app/main.py)** reads the file into a Pandas DataFrame.

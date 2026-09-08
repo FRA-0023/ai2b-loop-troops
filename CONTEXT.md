@@ -14,10 +14,14 @@ status: initialized
 - **Latest Action:** Repository initialized with Streamlit, .gitignore, and AI API wrappers.
 - **Working Directory:** C:\Documenti\UNIMIB\AI2B - Loop Troops
 
-## ??? Tech Stack & Constraints (Agent Guidelines)
+## 🛠️ Tech Stack & Constraints (Agent Guidelines)
 - **Strict UI Constraint:** Only use streamlit to build the frontend. Do NOT attempt to build a React/Next.js SPA.
-- **AI Integration:** Use langchain with OpenAI/Anthropic in i_core/llm_client.py.
+- **AI Integration:** Use langchain with OpenAI/Anthropic in ai_core/llm_client.py.
 - **Data Processing:** Use pandas for EDA and dataset ingestion.
+- **Active Skills (Orchestrated):**
+  - Coding / Architecture: `dev-backend`
+  - Data Science / EDA / ML: `data-science`
+  - Business / Copy / Pitch: `marketing-strategy`
 - **Negative Constraints:** Do not commit datasets, .env files, or heavy models (enforced by .gitignore).
 
 ## ?? Active Blockers

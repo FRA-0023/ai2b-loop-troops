@@ -39,3 +39,4 @@ __pycache__/
 # Ignore all contents of data folder, except .gitkeep
 /data/*
 !/data/.gitkeep
+.agents
