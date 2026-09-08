@@ -1,21 +1,23 @@
-# Project Architecture: AI2B Loop Troops
+# Project Status: FinSight AI
 
-This document tracks the high-level architecture of our Hackathon project.
+## Current Phase
+UX/UI Architecture & Pitch Presentation Preparation
 
-## Tech Stack
-* **Frontend/UI:** Streamlit (Python)
-* **Data Manipulation:** Pandas / Numpy / Polars
-* **AI Core:** OpenAI / Anthropic APIs (via custom wrappers or LangChain)
-* **Notebooks:** Jupyter (strictly for fast EDA, not for production code)
+## Objective
+Design and implement the high-impact Streamlit interface (Section 16 of `PROJECT_2.md`) and structure the executive 3-5 minute winning pitch presentation (Section 21 of `PROJECT_2.md`).
 
-## Active Skill Domains
-* **Coding & Backend:** `dev-backend` (cloud architecture, Docker Compose, Hexagonal Architecture, SOLID, testing, GNN recommenders)
-* **Data Science:** `data-science` (cleaning, validation, EDA, ML best practices, causal inference, Polars, visualization)
-* **Marketing & Strategy:** `marketing-strategy` (value proposition, pitch engineering, retention funnels, VOC mining)
+## Next Actions
+1. Structure and render the Streamlit UX/UI vertical slice (KPI cards, visual AI decision trace, explainable drivers, interactive what-if financing slider).
+2. Wire the structured JSON API contract (`POST /evaluate`) with zero-risk offline fallback.
+3. Finalize the 3-5 minute hackathon pitch deck and live demo script.
 
-## Architecture Diagram (Mental Model)
-1. **User** uploads the provided dataset.csv via the Streamlit interface.
-2. **Streamlit (app/main.py)** reads the file into a Pandas DataFrame.
-3. **App logic** formats the user query and data context.
-4. **AI Core (ai_core/llm_client.py)** sends the prompt to the LLM API.
-5. **App** renders the LLM response and visualizes the dataset (Charts/Tables).
+## Open Decisions
+- Streamlit layout styling (custom CSS executive dark/light bank theme vs native components).
+- Final mock applicant profile validation (EcoTex Milano vs custom Lombardy SME).
+
+## Blockers
+- None.
+
+## Definition of Done
+Streamlit web application running with interactive decision trace and scenario simulation, and pitch presentation slides/script finalized for delivery.
+

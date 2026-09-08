@@ -3,34 +3,24 @@ type: agent-context
 status: initialized
 ---
 
-# ?? Agent Operational Context (Fresh Context)
+# 🧭 Agent Operational Context (FinSight AI)
 
-## ?? Primary Objective (Hackathon Phase 0)
-- Maintain the boilerplate structure.
-- Stand by until the event day (Sept 8, 2026). Once the random track and dataset are provided, update this objective to reflect the specific MVP to build.
+## 🎯 Primary Objective (Hackathon Execution Phase)
+- Implement FinSight AI as specified in `PROJECT_2.md`: an AI-assisted financial intelligence engine evaluating SME financing proposals using Banca d'Italia credit data, Open Data Lombardia enterprise statistics, deterministic scoring, RAG evidence, and scenario simulation.
+- Immediate focus: Streamlit UX/UI design, interactive decision trace, and pitch presentation structure.
 
-## ?? Current State
-- **Phase:** Pre-event setup (Boilerplate only).
-- **Latest Action:** Repository initialized with Streamlit, .gitignore, and AI API wrappers.
-- **Working Directory:** C:\Documenti\UNIMIB\AI2B - Loop Troops
+## 📍 Current State
+- **Project Spec:** Defined in [PROJECT_2.md](file:///c:/Documenti/UNIMIB/AI2B%20-%20Loop%20Troops/PROJECT_2.md).
+- **Working Directory:** `C:\Documenti\UNIMIB\AI2B - Loop Troops`
+- **Orchestrated Skills:** `dev-backend`, `data-science`, `marketing-strategy`, `business-career`, `economics-finance-and-markets`.
 
 ## 🛠️ Tech Stack & Constraints (Agent Guidelines)
-- **Strict UI Constraint:** Only use streamlit to build the frontend. Do NOT attempt to build a React/Next.js SPA.
-- **AI Integration:** Use langchain with OpenAI/Anthropic in ai_core/llm_client.py.
-- **Data Processing:** Use pandas for EDA and dataset ingestion.
-- **Active Skills (Orchestrated):**
-  - Coding / Architecture: `dev-backend`
-  - Data Science / EDA / ML: `data-science`
-  - Business / Copy / Pitch: `marketing-strategy`
-  - Business & Strategy: `business-career`
-  - Economics & Financial Markets: `economics-finance-and-markets`
-- **Negative Constraints:** Do not commit datasets, .env files, or heavy models (enforced by .gitignore).
+- **Frontend/UI:** Streamlit with clean executive styling, visual AI decision trace, interactive what-if scenario slider, and structured KPI cards.
+- **Backend / AI Orchestrator:** FastAPI `POST /evaluate` contract, LangGraph / LangChain orchestration, DuckDB structured layer.
+- **Deterministic Separation (Golden Rule):** LLM is NOT the financial calculator. Deterministic scoring (Financial Health, ESG Alignment, Scenario changes) is separated from LLM reasoning/synthesis.
+- **Data Sources:** Banca d'Italia (provincial credit/rates), Open Data Lombardia (sector turnover/demographics), applicant data (EcoTex Milano €750k).
+- **Fallback Guarantee:** Deterministic offline demo fallback payload for zero-risk live pitch.
 
-## ?? Active Blockers
-- None. Waiting for the hackathon dataset and track announcement.
-
-## ?? Next Steps (For the Agent on Event Day)
-1. Parse the provided hackathon dataset (.csv / .json).
-2. Update PROJECT.md with the specific architecture chosen for the random track.
-3. Implement the real API calls in i_core/llm_client.py.
-4. Build the data ingestion UI in pp/main.py.
+## 🚀 Next Phase (New Chat)
+1. Design and build the Streamlit UX/UI components adhering to Section 16 of `PROJECT_2.md`.
+2. Craft the 3-5 minute winning pitch presentation and demo flow based on Section 21 of `PROJECT_2.md`.
