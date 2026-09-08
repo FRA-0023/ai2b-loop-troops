@@ -1,0 +1,33 @@
+Sezione,Codice_Voce,Descrizione_Voce,Valore_2024_EUR,Valore_2023_EUR,Note
+Stato Patrimoniale Attivo,B.I,Immobilizzazioni immateriali (brevetti e licenze),120000,140000,Brevetti industriali per processi a riciclo idrico
+Stato Patrimoniale Attivo,B.II.1,Terreni e fabbricati industriali,2800000,2850000,Sito produttivo Milano Certosa
+Stato Patrimoniale Attivo,B.II.2,Impianti e macchinari di produzione,4800000,4200000,Linee di filatura e finissaggio ecologico
+Stato Patrimoniale Attivo,B.II.3,Attrezzature industriali e commerciali,450000,410000,Laboratorio di collaudo e controllo qualità
+Stato Patrimoniale Attivo,B.II.4,Altri beni materiali strumentali,180000,160000,Carrelli elevatori elettrici e automezzi
+Stato Patrimoniale Attivo,B.III,Immobilizzazioni finanziarie (depositi cauzionali),250000,240000,Partecipazioni e cauzioni utilities
+Stato Patrimoniale Attivo,C.I,Rimanenze finali materie prime e merci,1420000,1350000,Filati riciclati e coloranti a basso impatto
+Stato Patrimoniale Attivo,C.II.1,Crediti commerciali verso clienti (entro 12m),3850000,3420000,Crediti esigibili a 60/90 giorni
+Stato Patrimoniale Attivo,C.IV.1,Disponibilità liquide (saldi attivi bancari),1630000,1280000,Depositi su conti correnti ordinari
+Stato Patrimoniale Attivo,D,Ratei e risconti attivi,85000,75000,Canoni leasing e coperture assicurative
+Stato Patrimoniale Passivo,A.I,Capitale sociale,1500000,1500000,Capitale sottoscritto e interamente versato
+Stato Patrimoniale Passivo,A.IV,Riserva legale,300000,260000,Accantonamenti obbligatori a norma di legge
+Stato Patrimoniale Passivo,A.VII,Altre riserve straordinarie,2850000,2440000,Riserve indivisibili e utili reinvestiti
+Stato Patrimoniale Passivo,A.IX,Utile netto dell'esercizio,1150000,880000,Utile d'esercizio destinato a capitale
+Stato Patrimoniale Passivo,B,Fondi per rischi e oneri,220000,190000,Fondo rischi oscillazione materie prime
+Stato Patrimoniale Passivo,C,Trattamento di fine rapporto subordinato (TFR),680000,640000,Fondo indennità dipendenti (64 addetti)
+Stato Patrimoniale Passivo,D.4.a,Debiti verso banche esigibili entro 12 mesi,1150000,1050000,Quote capitale mutui a breve e fidi c/c
+Stato Patrimoniale Passivo,D.4.b,Debiti verso banche oltre 12 mesi,3550000,3850000,Mutui chirografari a medio-lungo termine
+Stato Patrimoniale Passivo,D.7,Debiti commerciali verso fornitori,2840000,2650000,Forniture filati organici e tinture
+Stato Patrimoniale Passivo,D.12,Debiti tributari (IRES e IRAP),420000,390000,Debiti verso l'erario per imposte correnti
+Stato Patrimoniale Passivo,D.13,Debiti verso istituti previdenziali (INPS/INAIL),195000,185000,Contributi previdenziali dipendenti
+Conto Economico,A.1,Ricavi delle vendite e prestazioni,13850000,12180000,Fatturato caratteristico tessile
+Conto Economico,A.5,Altri ricavi e proventi operativi,350000,255000,Certificati bianchi e incentivi transizione verde
+Conto Economico,B.6,Costi per acquisto materie prime e merci,-4820000,-4350000,Acquisto fibre naturali certificate GOTS
+Conto Economico,B.7,Costi per prestazioni di servizi,-3980000,-3620000,Energia rinnovabile e lavorazioni esterne
+Conto Economico,B.8,Godimento beni di terzi (canoni leasing),-520000,-480000,Leasing industriale per telai tessili
+Conto Economico,B.9,Costi del personale complessivi,-2250000,-2090000,Salari e stipendi per 64 dipendenti
+Conto Economico,B.10,Ammortamenti delle immobilizzazioni materiali,-920000,-840000,Quote ammortamento linee produttive
+Conto Economico,B.14,Oneri diversi di gestione,-160000,-140000,Tributi locali e quote confindustriali
+Conto Economico,C.17,Interessi passivi e altri oneri finanziari,-215000,-235000,Interessi passivi su mutui bancari
+Conto Economico,E.20,Imposte sul reddito dell'esercizio (IRES/IRAP),-535000,-430000,Imposte sul reddito d'esercizio
+Conto Economico,E.21,Utile netto finale d'esercizio,1150000,880000,Utile netto dell'esercizio
