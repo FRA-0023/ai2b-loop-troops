@@ -87,4 +87,8 @@ streamlit run app/main.py
 ---
 
 **Author:** Francesco Colombini  
+<<<<<<< HEAD
 [GitHub Profile](https://github.com/FRA-0023) · [LinkedIn](https://www.linkedin.com/in/francescocolombini/)
+=======
+[GitHub Profile](https://github.com/FRA-0023) · [LinkedIn](https://www.linkedin.com/in/francescocolombini/)
+>>>>>>> a6a2edc70d8a3e47231e932edea95f7633307fe7
