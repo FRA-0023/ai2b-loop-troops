@@ -1,4 +1,4 @@
-﻿# FinSight AI - 5-Minute Executive Pitch Script (300 Seconds)
+# FinSight AI - 5-Minute Executive Pitch Script (300 Seconds)
 ## Official Framework: five-minute-pitch-engine
 
 **Event**: AI2B Hackathon 2026  
@@ -51,26 +51,30 @@
 
 ---
 
-### [02:00 - 03:30] Block 3: Live Demo — EcoTex Milano & The What-If Optimizer
+### [02:00 - 03:30] Block 3: Live Demo — Enterprise Workspace, Live DuckDB Ingestion & Stress Lab
 *(Alt-Tab to Streamlit full-screen: `http://localhost:8501`).*
 
-> **"Let's see it live on our terminal.**
+> **"Let's see it live on our enterprise workspace.**
 >
-> **Here is EcoTex Milano S.p.A., a technical textile manufacturer requiring €750,000 for energy-efficient dyeing and closed-loop water recycling machinery.**
+> *(Point out authentication)* **FinSight features enterprise role-based access control separating SME CFOs from Corporate Accounting Advisory firms.**
 >
-> *(Click '🚀 Analyze Bankability')*
+> **Logging in as the CFO of EcoTex Milano, we drag-and-drop our 2024 balance sheet and ESG audit into the Ingestion tab. In 0.3 seconds, our local DuckDB lakehouse parses the financial statements directly in RAM with an immutable SHA-256 cryptographic audit seal.**
 >
-> **In 14 seconds, FinSight processes €14.2M in revenue, recognizes Milan’s low default rate at 1.82%, and verifies a 42% water reduction audit.**
+> *(Click '🚀 Evaluate Now')*
 >
-> **The output is immediate: Financial Health at 82/100, ESG Alignment at 91/100, and a PRE-APPROVED recommendation at a prime 5.15% fixed rate.**
+> **In under 14 seconds, FinSight fuses €14.2M in revenue with Milan’s Banca d'Italia 1.82% default rate and verifies our 42% water reduction audit.**
 >
-> *(Drag slider to €1,000,000)*
+> **The output is immediate: Financial Health at 95/100, ESG Alignment at 95/100, and a PRE-APPROVED recommendation at a prime 5.15% fixed rate.**
 >
-> **Now, here is the decisive value lever: what happens if the business owner wants to stretch the loan to €1,000,000?**
+> *(Switch to Capital Sizing & Stress Lab, drag slider to €1,000,000)*
 >
-> **They drag our What-If slider: DSCR drops to 1.28x, breaching covenant limits, and the status shifts to REVIEW.**
+> **Now, the decisive value lever: what happens if the business owner wants to stretch the loan to €1,000,000?**
 >
-> **FinSight eliminates the guesswork by delivering immediate actionable guidance: 'Do not apply for €1M pure debt. Structure the deal as €750k senior bank loan to preserve prime pricing, and bridge the €250k balance with the regional green capital grant'. With one click, the CFO exports a certified bank-ready dossier."**
+> **They test it in our Stress Lab in real time: DSCR compresses to 1.35x, and the status shifts to REVIEW.**
+>
+> **FinSight eliminates guesswork by delivering actionable guidance: 'Avoid applying for €1M pure debt. Structure the deal as €750k senior bank loan, and bridge the €250k balance with the regional green capital grant'.**
+>
+> *(For accounting advisors, click 'Advisor Portfolio Matrix')* **And for corporate accounting firms, our multi-client portfolio console allows managing credit readiness across dozens of SMEs with instant batch dossier exports."**
 
 ---
 

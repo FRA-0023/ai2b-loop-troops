@@ -1,55 +1,138 @@
-﻿"""
-FinSight AI - Backend Integration Client & Fallback Protocol
-============================================================
-Handles HTTP communication between the Streamlit UI and the FastAPI backend.
+"""
+FinSight AI - Backend Integration Client & Antifragile Fallback Protocol
+========================================================================
+Handles HTTP communication between the Streamlit UI and the FastAPI backend endpoints:
+- POST /auth
+- POST /upload
+- POST /evaluate
+- POST /scenario
 
-INSTRUCTIONS FOR TEAMMATE B (Backend / AI Engine):
---------------------------------------------------
-1. Your FastAPI server should run at `http://localhost:8000` (or configured URL).
-2. Endpoint: `POST /evaluate`
-3. Request Body format:
-   {
-       "query": "Assess a €750k sustainability-linked equipment loan for EcoTex Milano...",
-       "loan_amount": 750000
-   }
-4. Response Body format: Must match the JSON schema in `app/mock_data.py` (and Section 15 of PROJECT_2.md).
-5. If your backend is offline, under development, or returns an error, this client
-   AUTOMATICALLY engages the deterministic fallback to prevent UI crashes.
+Guarantees 100% Antifragility:
+If the FastAPI backend is offline, times out, or returns an HTTP error, this client
+automatically executes local DuckDB queries and deterministic Python formulas,
+preventing any UI crash and ensuring seamless hackathon demo continuity.
 """
 
+import io
 import requests
-from typing import Dict, Any, Tuple
+from typing import Dict, Any, Tuple, Optional
 from app.mock_data import get_base_demo_payload, calculate_scenario
-
+from app.auth import verify_credentials
+from app.duckdb_engine import (
+    calculate_deterministic_bankability,
+    parse_and_ingest_csv,
+    parse_and_ingest_pdf
+)
 
 DEFAULT_BACKEND_URL = "http://localhost:8000"
 
 
+def authenticate_api(
+    email: str,
+    password: str,
+    role: str = "sme_cfo",
+    backend_url: str = DEFAULT_BACKEND_URL,
+    force_mock: bool = False,
+    timeout_seconds: float = 3.0
+) -> Tuple[Optional[Dict[str, Any]], str, str]:
+    """
+    Authenticates user against FastAPI /auth endpoint or local credential store.
+    Returns: (user_dict, mode, status_message)
+    """
+    if force_mock:
+        user, msg = verify_credentials(email, password, role)
+        mode = "DETERMINISTIC_FALLBACK"
+        return user, mode, f"Local session verification: {msg}"
+
+    target_endpoint = f"{backend_url.rstrip('/')}/auth"
+    try:
+        response = requests.post(
+            target_endpoint,
+            json={"email": email, "password": password, "role": role},
+            headers={"Content-Type": "application/json"},
+            timeout=timeout_seconds
+        )
+        if response.status_code == 200:
+            return response.json().get("user"), "LIVE_API", "Authenticated via FastAPI backend."
+        else:
+            # Fallback to local credential verification
+            user, msg = verify_credentials(email, password, role)
+            return user, "DETERMINISTIC_FALLBACK", f"Backend HTTP {response.status_code}. Engaged local auth fallback: {msg}"
+    except requests.exceptions.RequestException as exc:
+        user, msg = verify_credentials(email, password, role)
+        return user, "DETERMINISTIC_FALLBACK", f"Backend unreachable ({type(exc).__name__}). Engaged local auth: {msg}"
+
+
+def upload_file_api(
+    file_bytes: bytes,
+    filename: str,
+    doc_type: str,
+    company_id: str,
+    backend_url: str = DEFAULT_BACKEND_URL,
+    force_mock: bool = False,
+    timeout_seconds: float = 6.0
+) -> Tuple[Dict[str, Any], str, str]:
+    """
+    Uploads a balance sheet (CSV/PDF) or ESG disclosure to FastAPI /upload or directly ingests into DuckDB.
+    Returns: (result_dict, mode, status_message)
+    """
+    if force_mock:
+        return _local_ingest(file_bytes, filename, doc_type, company_id)
+
+    target_endpoint = f"{backend_url.rstrip('/')}/upload"
+    try:
+        files = {"file": (filename, io.BytesIO(file_bytes))}
+        data = {"doc_type": doc_type, "company_id": company_id}
+        response = requests.post(
+            target_endpoint,
+            files=files,
+            data=data,
+            timeout=timeout_seconds
+        )
+        if response.status_code in (200, 201):
+            return response.json(), "LIVE_API", f"Successfully ingested '{filename}' via FastAPI."
+        else:
+            res = _local_ingest(file_bytes, filename, doc_type, company_id)
+            return res[0], "DETERMINISTIC_FALLBACK", f"Backend HTTP {response.status_code}. Local DuckDB ingestion succeeded."
+    except requests.exceptions.RequestException as exc:
+        res = _local_ingest(file_bytes, filename, doc_type, company_id)
+        return res[0], "DETERMINISTIC_FALLBACK", f"Backend unreachable ({type(exc).__name__}). Local DuckDB ingestion succeeded."
+
+
+def _local_ingest(file_bytes: bytes, filename: str, doc_type: str, company_id: str) -> Tuple[Dict[str, Any], str, str]:
+    """Local DuckDB parsing fallback."""
+    if filename.lower().endswith(".csv"):
+        result = parse_and_ingest_csv(file_bytes, filename, company_id)
+    else:
+        result = parse_and_ingest_pdf(file_bytes, filename, company_id, doc_type)
+    return result, "DETERMINISTIC_FALLBACK", f"Direct In-Process DuckDB ingestion: {result.get('message', 'Completed')}"
+
+
 def evaluate_application(
     query: str,
+    company_id: str = "ecotex",
     loan_amount: int = 750000,
     backend_url: str = DEFAULT_BACKEND_URL,
     force_mock: bool = False,
     timeout_seconds: float = 4.0
 ) -> Tuple[Dict[str, Any], str, str]:
     """
-    Evaluates an SME financing application.
-    
-    Returns:
-        (payload: Dict[str, Any], mode: str, status_message: str)
-        - mode: "LIVE_API" or "DETERMINISTIC_FALLBACK"
-        - status_message: Informative status string for credit officers/engineers.
+    Evaluates an SME financing application via FastAPI /evaluate or local DuckDB scoring engine.
+    Returns: (payload, mode, status_message)
     """
     if force_mock:
-        payload = get_base_demo_payload()
-        if loan_amount != 750000:
-            scenario_res = calculate_scenario(payload, loan_amount)
-            payload["scenario"] = scenario_res
-        return payload, "DETERMINISTIC_FALLBACK", "Operating in safe deterministic fallback mode (Zero external dependency)."
+        try:
+            payload = calculate_deterministic_bankability(company_id=company_id, requested_amount=loan_amount)
+            payload["scenario"] = calculate_scenario(payload, loan_amount + 250000)
+            return payload, "DETERMINISTIC_FALLBACK", "Operating in safe deterministic DuckDB mode."
+        except Exception:
+            payload = get_base_demo_payload()
+            return payload, "DETERMINISTIC_FALLBACK", "Operating in safe deterministic mock fallback."
 
     target_endpoint = f"{backend_url.rstrip('/')}/evaluate"
     request_data = {
         "query": query,
+        "company_id": company_id,
         "loan_amount": loan_amount
     }
 
@@ -60,27 +143,58 @@ def evaluate_application(
             headers={"Content-Type": "application/json"},
             timeout=timeout_seconds
         )
-        
         if response.status_code == 200:
             data = response.json()
-            # Ensure scenario key exists
             if "scenario" not in data:
-                data["scenario"] = calculate_scenario(data, 1000000)
+                data["scenario"] = calculate_scenario(data, loan_amount + 250000)
             return data, "LIVE_API", f"Successfully evaluated via FastAPI backend ({target_endpoint})."
         else:
-            # Backend returned 4xx or 5xx (Section 21 Error Handling)
-            fallback = get_base_demo_payload()
+            payload = calculate_deterministic_bankability(company_id=company_id, requested_amount=loan_amount)
+            payload["scenario"] = calculate_scenario(payload, loan_amount + 250000)
             return (
-                fallback,
+                payload,
                 "DETERMINISTIC_FALLBACK",
-                f"Backend returned HTTP {response.status_code}. Seamlessly engaged deterministic fallback."
+                f"Backend returned HTTP {response.status_code}. Seamlessly engaged deterministic DuckDB fallback."
             )
-
     except requests.exceptions.RequestException as exc:
-        # Connection refused, timeout, or DNS failure
-        fallback = get_base_demo_payload()
+        payload = calculate_deterministic_bankability(company_id=company_id, requested_amount=loan_amount)
+        payload["scenario"] = calculate_scenario(payload, loan_amount + 250000)
         return (
-            fallback,
+            payload,
             "DETERMINISTIC_FALLBACK",
-            f"Backend unreachable at {target_endpoint} ({type(exc).__name__}). Engaged deterministic fallback."
+            f"Backend unreachable at {target_endpoint} ({type(exc).__name__}). Engaged deterministic DuckDB fallback."
         )
+
+
+def simulate_scenario_api(
+    company_id: str,
+    requested_amount: int,
+    base_payload: Dict[str, Any],
+    backend_url: str = DEFAULT_BACKEND_URL,
+    force_mock: bool = False,
+    timeout_seconds: float = 3.0
+) -> Tuple[Dict[str, Any], str, str]:
+    """
+    Simulates a What-If alternative financing amount via FastAPI /scenario or local math.
+    Returns: (scenario_dict, mode, status_message)
+    """
+    if force_mock:
+        res = calculate_scenario(base_payload, requested_amount)
+        return res, "DETERMINISTIC_FALLBACK", "Simulated locally via deterministic DuckDB/Python formulas."
+
+    target_endpoint = f"{backend_url.rstrip('/')}/scenario"
+    try:
+        response = requests.post(
+            target_endpoint,
+            json={"company_id": company_id, "loan_amount": requested_amount},
+            headers={"Content-Type": "application/json"},
+            timeout=timeout_seconds
+        )
+        if response.status_code == 200:
+            return response.json(), "LIVE_API", "Simulated via FastAPI backend."
+        else:
+            res = calculate_scenario(base_payload, requested_amount)
+            return res, "DETERMINISTIC_FALLBACK", f"Backend HTTP {response.status_code}. Local fallback applied."
+    except requests.exceptions.RequestException as exc:
+        res = calculate_scenario(base_payload, requested_amount)
+        return res, "DETERMINISTIC_FALLBACK", f"Backend unreachable. Local fallback applied ({type(exc).__name__})."

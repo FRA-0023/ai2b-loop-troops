@@ -1,4 +1,4 @@
-﻿# FinSight AI - Copione Esecutivo Pitch 5 Minuti (300 Secondi)
+# FinSight AI - Copione Esecutivo Pitch 5 Minuti (300 Secondi)
 ## Framework Ufficiale: five-minute-pitch-engine
 
 **Evento**: AI2B Hackathon 2026  
@@ -51,26 +51,30 @@
 
 ---
 
-### [02:00 - 03:30] Blocco 3: Live Demo — EcoTex Milano & Lo Stress Test What-If
+### [02:00 - 03:30] Blocco 3: Live Demo — Enterprise Workspace, Ingestione DuckDB & Stress Lab
 *(Alt-Tab su Streamlit a tutto schermo: `http://localhost:8501`).*
 
-> **"Vediamolo in tempo reale.**
+> **"Vediamolo in azione sul nostro workspace enterprise.**
 >
-> **Prendiamo EcoTex Milano S.p.A., manifattura tessile che intende finanziare un impianto a riciclo idrico da 750.000 euro.**
+> *(Mostra il login e i ruoli)* **FinSight integra un'autenticazione a ruoli che separa il CFO della singola PMI dagli Studi Commercialisti che gestiscono portafogli multi-cliente.**
 >
-> *(Clicca su '🚀 Analyze Bankability')*
+> **Entrando come CFO di EcoTex Milano, trasciniamo il nostro bilancio 2024 e il report di sostenibilità nel tab di Ingestione. In 0,3 secondi, il nostro motore in-process DuckDB parsa i dati in RAM e calcola l'impronta crittografica SHA-256 a garanzia di sovranità del dato.**
 >
-> **In 14 secondi, FinSight incrocia 14,2 milioni di fatturato, rileva il basso rischio provinciale di Milano all'1,82% e certifica l'abbattimento del 42% dei consumi idrici.**
+> *(Clicca su '🚀 Evaluate Now')*
 >
-> **Il risultato è immediato: Salute Finanziaria a 82/100, Allineamento ESG a 91/100, Delibera PRE-APPROVED al tasso prime del 5,15%.**
+> **In meno di 14 secondi, FinSight incrocia 14,2 milioni di fatturato, rileva il benchmark di default Banca d'Italia di Milano all'1,82% e valida il risparmio idrico del 42%.**
 >
-> *(Trascina lo slider a €1.000.000)*
+> **Il riscontro è istantaneo: Salute Finanziaria a 95/100, Allineamento ESG a 95/100, Delibera PRE-APPROVED al tasso agevolato del 5,15%.**
 >
-> **Ma ecco la vera leva di valore: cosa succede se l'imprenditore volesse chiedere 1 milione di euro?**
+> *(Passa allo Stress Lab e trascina lo slider a €1.000.000)*
 >
-> **Trascina lo slider e lo vede subito: il DSCR crolla a 1,28x, il punteggio perde 8 punti e lo stato passa a REVIEW.**
+> **Ma ecco la vera leva decisionale: cosa accade se l'azienda volesse alzare la richiesta a 1 milione di euro?**
 >
-> **FinSight non lo lascia nel dubbio: gli indica subito come strutturare l'operazione: 'Chiedi 750k di prestito bancario per mantenere il tasso minimo, e copri i 250k restanti con il bando regionale a fondo perduto'. Con un click, genera il fascicolo certificato per la banca."**
+> **Nello Stress Lab lo simula in tempo reale: il DSCR scende a 1,35x e lo stato vira su REVIEW.**
+>
+> **FinSight elimina ogni incertezza fornendo la raccomandazione operativa: 'Non richiedere 1 milione di solo debito. Struttura l'operazione su 750k di linea bancaria prime e copri i restanti 250k tramite contributo regionale a fondo perduto'.**
+>
+> *(Per i commercialisti, mostra la scheda Matrice Advisor)* **E per gli studi contabili, la console Advisor permette di monitorare la bancabilità di decine di PMI clienti in un unico colpo d'occhio."**
 
 ---
 

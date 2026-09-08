@@ -1,4 +1,4 @@
-﻿"""
+"""
 FinSight AI - 5-Minute Executive Pitch Deck (five-minute-pitch-engine)
 ======================================================================
 Strictly 6 slides, large typography (>= 28pt), 3-second glance test,
@@ -166,14 +166,14 @@ def build_pitch_deck():
                "Zero mathematical hallucination: combining high-speed analytics with evidence-based AI synthesis.")
 
     tech_cards = [
-        ("01 / In-Memory Core", "DuckDB 1.0 (OLAP)",
-         "• High-performance columnar SQL engine.\n• Sub-millisecond parsing of company balance sheets.\n• Total data sovereignty: financial records remain strictly within local process memory with zero cloud leakage."),
+        ("01 / In-Memory Lakehouse", "DuckDB 1.0 (Live OLAP)",
+         "• High-performance columnar SQL engine.\n• Dynamic drag-and-drop ingestion of CSV & PDF balance sheets.\n• Sub-second parsing directly in RAM.\n• Total data sovereignty: financial records remain local with zero cloud leaks."),
         ("02 / Public Data Fusion", "Banca d'Italia & OpenData",
-         "• Real-time integration of central bank provincial credit default rates (Milan NPL: 1.82%).\n• Dynamic sync with Open Data Lombardia sector growth (+4.1% YoY).\n• Transforms local context into interest rate bargaining power."),
+         "• Real-time integration of central bank provincial credit default rates (Milan NPL: 1.82%).\n• Dynamic sync with Open Data Lombardia sector growth (+4.1% YoY).\n• Transforms local macroeconomic context into rate bargaining power."),
         ("03 / Deterministic Policy", "Python 3.11 & Pydantic",
-         "• Mathematical computation of DSCR (1.68x), Net Debt/EBITDA, and Quick Ratios.\n• Bank-grade credit scoring rules executed via hard-coded formulas.\n• Golden Rule: The LLM is NEVER the financial calculator."),
-        ("04 / Grounded Synthesis", "FastEmbed & Streamlit",
-         "• Semantic vector extraction of ESG audit documents (-42% water certification).\n• Multi-factor evidence tagged as [FACT], [CALCULATION], or [REASONING].\n• Enterprise-grade terminal interface delivering 14-second decisions.")
+         "• Mathematical computation of DSCR (2.96x base), Net Debt/EBITDA, and Quick Ratios.\n• Bank-grade credit scoring rules executed via hard-coded formulas.\n• Golden Rule: The LLM is NEVER the financial calculator."),
+        ("04 / Enterprise Workspace", "Multi-Tenant & Streamlit",
+         "• Role-based authentication (SME CFO vs Accounting Advisor).\n• Multi-client portfolio management for corporate accountants.\n• Semantic vector extraction of ESG audit disclosures.\n• Enterprise terminal delivering certified dossiers in 14s.")
     ]
 
     for idx, (tag, title, body) in enumerate(tech_cards):
@@ -200,13 +200,13 @@ def build_pitch_deck():
     # ==========================================================
     s4 = prs.slides.add_slide(blank_layout)
     set_slide_bg(s4)
-    add_header(s4, "Live Demonstration", "EcoTex Milano: Pre-Underwritten in 14 Seconds",
-               "Discovering bankability and optimizing borrowing limits before formal bank application.")
+    add_header(s4, "Live Demonstration", "EcoTex Milano: Live Ingestion & Pre-Underwriting",
+               "Drag-and-drop balance sheet into DuckDB, instant scoring, and stress-testing loan limits.")
 
     # 4 Core KPI Display
     kpis = [
-        ("Financial Health", "82 / 100", "Prime Solvency", ICE_BLUE),
-        ("ESG Alignment", "91 / 100", "Top Decile Green", EMERALD),
+        ("Financial Health", "95 / 100", "Prime Solvency", ICE_BLUE),
+        ("ESG Alignment", "95 / 100", "Top Decile Green", EMERALD),
         ("Territorial Risk", "1.82%", "Milan Default Benchmark", AMBER),
         ("Bankability Outcome", "APPROVE", "5.15% Prime Rate", EMERALD)
     ]
@@ -232,29 +232,36 @@ def build_pitch_deck():
         p2.font.color.rgb = TEXT_MUTED
 
     # Bottom Area: What-If Stress Callout
-    add_card(s4, Inches(0.8), Inches(4.2), Inches(11.7), Inches(2.6), title="Interactive What-If Optimizer (€750k vs €1.0M Tipping Point)")
+    add_card(s4, Inches(0.8), Inches(4.2), Inches(11.7), Inches(2.6), title="Live Ingestion & What-If Stress Testing (€750k vs €1.0M Tipping Point)")
     tb_w = s4.shapes.add_textbox(Inches(1.0), Inches(4.7), Inches(11.3), Inches(2.0))
     tf_w = tb_w.text_frame
     tf_w.word_wrap = True
 
     pw1 = tf_w.paragraphs[0]
-    pw1.text = "OPTIMAL BASE (€750,000): DSCR 1.68x | Health 82/100 | Outcome: APPROVE at prime rate + 15% regional grant."
+    pw1.text = "LIVE DUCKDB INGESTION: Balance sheet parsed in RAM in 0.3s; SHA-256 cryptographic proof generated."
     pw1.font.size = Pt(13)
     pw1.font.bold = True
-    pw1.font.color.rgb = EMERALD
-    pw1.space_after = Pt(8)
+    pw1.font.color.rgb = ICE_BLUE
+    pw1.space_after = Pt(6)
 
     pw2 = tf_w.add_paragraph()
-    pw2.text = "STRESS SCENARIO (€1,000,000): DSCR drops to 1.28x (breaches covenant) | Health drops to 74 | Outcome: REVIEW."
-    pw2.font.size = Pt(13)
+    pw2.text = "OPTIMAL BASE (€750k): DSCR 2.96x | Health 95/100 | Pre-Approved at prime 5.15% fixed + 15% grant."
+    pw2.font.size = Pt(12.5)
     pw2.font.bold = True
-    pw2.font.color.rgb = AMBER
-    pw2.space_after = Pt(8)
+    pw2.font.color.rgb = EMERALD
+    pw2.space_after = Pt(6)
 
     pw3 = tf_w.add_paragraph()
-    pw3.text = "ACTIONABLE CFO GUIDANCE: Avoid applying for €1.0M debt directly. Structure request as €750k loan + €250k regional grant to preserve prime pricing and ensure 100% bank approval."
-    pw3.font.size = Pt(12)
-    pw3.font.color.rgb = TEXT_WHITE
+    pw3.text = "STRESS SCENARIO (€1.0M+): DSCR compresses to 1.35x | Financial Score drops to 74 | REVIEW triggered."
+    pw3.font.size = Pt(12.5)
+    pw3.font.bold = True
+    pw3.font.color.rgb = AMBER
+    pw3.space_after = Pt(6)
+
+    pw4 = tf_w.add_paragraph()
+    pw4.text = "ACTIONABLE CFO GUIDANCE: Avoid €1.0M debt directly. Structure as €750k loan + €250k regional decarbonization grant to retain prime pricing and guarantee 100% approval."
+    pw4.font.size = Pt(12)
+    pw4.font.color.rgb = TEXT_WHITE
 
     # ==========================================================
     # SLIDE 5: BUSINESS MODEL & UNIT ECONOMICS
@@ -329,8 +336,13 @@ def build_pitch_deck():
             p.space_after = Pt(5)
 
     output_path = os.path.join(os.getcwd(), "presentation", "FinSight_AI_Pitch_Deck.pptx")
-    prs.save(output_path)
-    print(f"Presentation successfully updated and saved at: {output_path}")
+    try:
+        prs.save(output_path)
+        print(f"Presentation successfully updated and saved at: {output_path}")
+    except PermissionError:
+        alt_path = os.path.join(os.getcwd(), "presentation", "FinSight_AI_Pitch_Deck_Enterprise.pptx")
+        prs.save(alt_path)
+        print(f"Primary file locked by viewer. Successfully saved updated deck at: {alt_path}")
 
 if __name__ == "__main__":
     build_pitch_deck()

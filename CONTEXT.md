@@ -1,4 +1,4 @@
-﻿---
+---
 type: agent-context
 status: handoff-ready
 ---
@@ -17,10 +17,13 @@ status: handoff-ready
 - **Evidence Taxonomy:** Section 26 compliance with strict labeling: `[FACT]` (audited/central bank data), `[CALCULATION]` (deterministic math formulas), and `[REASONING]` (semantic synthesis).
 
 ## 📍 Current Workspace State
-- `app/main.py`: Streamlit vertical slice with institutional dark theme, 7-step decision trace, Plotly gauges, What-If loan sizing slider, and certified dossier export.
-- `app/api_client.py`: Antifragile dual-mode client (FastAPI `POST /evaluate` with 4.0s timeout and auto-failover to local deterministic payload).
+- `app/auth.py`: Role-based authentication and session state management (SME CFO vs Accounting Advisor) with 1-click evaluation shortcuts.
+- `app/duckdb_engine.py`: In-process DuckDB OLAP engine (`data/duckdb/finsight.duckdb`) with relational schemas (`companies`, `financial_statements`, `bdi_provincial_credit`, `lombardia_sectors`, `document_chunks`), dynamic CSV/PDF parsers, and deterministic DSCR/ratio scoring.
+- `app/api_client.py`: Antifragile client wired across `/auth`, `/upload`, `/evaluate`, and `/scenario` endpoints with auto-failover to local DuckDB and deterministic mock engine.
+- `app/main.py`: Enterprise Streamlit workspace with institutional glassmorphic design, authentication gate, dynamic client switcher, 4-5 tabbed modules (Credit Dossier, Ingestion Lakehouse, What-If Stress Lab, Certified Export, Advisor Portfolio Matrix).
 - `app/mock_data.py`: Single source of truth for fallback and scenario formulas.
 - `app/BACKEND_INTEGRATION_GUIDE.md`: Full specification for Teammate B.
-- `presentation/FinSight_AI_Pitch_Deck.pptx`: 6-slide executive deck following `five-minute-pitch-engine`.
-- `presentation/PITCH_AND_DEMO_SCRIPT_IT.md`: Italian script (~650 words, timed at 04:30) with Big4/Tech Q&A defense.
-- `presentation/PITCH_AND_DEMO_SCRIPT.md`: English script (~660 words, timed at 04:30) with Big4/Tech Q&A defense.
+- `presentation/FinSight_AI_Pitch_Deck.pptx` & `presentation/FinSight_AI_Pitch_Deck_Enterprise.pptx`: 6-slide executive deck following `five-minute-pitch-engine`.
+- `presentation/PITCH_AND_DEMO_SCRIPT_IT.md`: Italian script (~650 words, timed at 04:30) with Big4/Tech Q&A defense and live DuckDB demo cues.
+- `presentation/PITCH_AND_DEMO_SCRIPT.md`: English script (~660 words, timed at 04:30) with Big4/Tech Q&A defense and live DuckDB demo cues.
+- `scripts/generate_pitch_deck.py`: Python script automating PPTX slide creation.
