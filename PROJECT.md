@@ -1087,7 +1087,7 @@ UI should show a useful state instead of a blank screen.
 # 22. Repository Structure
 
 ```text
-finsight-ai/
+ai2b-loop-troops/
 │
 ├── app.py                         # Streamlit entry point
 ├── README.md

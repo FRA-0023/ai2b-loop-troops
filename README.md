@@ -2,15 +2,16 @@
 
 Financial Intelligence & Decision Engine for SME financing assessment.
 
-Uses:
-- **UI** from [ai2b-loop-troops](https://github.com/FRA-0023/ai2b-loop-troops) (`app/main.py`)
-- **Data** from [bankbench-data-sync](https://github.com/FRA-0023/ai2b-loop-troops/tree/master/bankbench-data-sync/bankbench-data-sync) (Open Data Lombardia)
-- **Backend** FinSight FastAPI + DuckDB + deterministic scoring (this repo)
+This repository contains the integrated FinSight AI platform, including:
+- **UI** (`app/main.py`)
+- **Data Ingestion** (`bankbench-data-sync`)
+- **Backend** FinSight FastAPI + DuckDB + deterministic scoring
 
 ## Quick Start
 
 ```powershell
-cd c:\Users\palla\Downloads\FinsightAI
+git clone https://github.com/FRA-0023/ai2b-loop-troops.git
+cd ai2b-loop-troops
 python -m venv .venv
 .\.venv\Scripts\activate
 pip install -r requirements.txt
@@ -112,7 +113,7 @@ needed at deploy time.
 
 1. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub
 2. **New app** → **Deploy a public app from GitHub**
-3. Repository `Pallab9999/finsight-ai`, branch `main`, main file path `app/main.py`
+3. Repository `FRA-0023/ai2b-loop-troops`, branch `main`, main file path `app/main.py`
 4. Optional — under **Advanced settings → Secrets**, add a provider key
    (Streamlit exposes secrets as environment variables):
 
@@ -138,3 +139,5 @@ FinsightAI/
 ├── data/finsight.duckdb    # Structured data for tools
 └── scripts/                # sync_and_seed.py, seed_demo.py
 ```
+
+
