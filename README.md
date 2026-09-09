@@ -1,94 +1,140 @@
-﻿# ⚡ AI2B Loop Troops: Rapid AI Prototyping Architecture for 8-Hour Sprints
+# FinSight AI
 
-[![Event](https://img.shields.io/badge/Event-AI2B%20Games%202026-blue)](#)
-[![Frontend](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?logo=streamlit)](#)
-[![Language](https://img.shields.io/badge/Language-Python%203.11+-3776AB?logo=python)](https://www.python.org/)
-[![Architecture](https://img.shields.io/badge/Architecture-Decoupled%20Sprint%20Stack-green)](#)
-[![Constraint](https://img.shields.io/badge/Time%20Limit-8%20Hours-red)](#)
+Financial Intelligence & Decision Engine for SME financing assessment.
 
-> High-velocity deployment stack developed for competitive AI hackathons. Streamlit UI decoupled from a provider-agnostic LLM core under strict 8-hour sprint constraints.
+Uses:
+- **UI** from [ai2b-loop-troops](https://github.com/FRA-0023/ai2b-loop-troops) (`app/main.py`)
+- **Data** from [bankbench-data-sync](https://github.com/FRA-0023/ai2b-loop-troops/tree/master/bankbench-data-sync/bankbench-data-sync) (Open Data Lombardia)
+- **Backend** FinSight FastAPI + DuckDB + deterministic scoring (this repo)
 
----
+## Quick Start
 
-## 📌 Executive Summary
-
-Competitive AI hackathons fail when engineering teams spend crucial early hours debating UI libraries, rewiring API clients, or debugging monolithic scripts.
-
-AI2B Loop Troops is an operational rapid-prototyping architecture built for the AI2B Games Milano Stage, engineered for execution under strict 8-hour time limits.
-
-The stack establishes an immediate division of responsibilities: instant tabular ingestion in Streamlit, decoupled prompt engineering, and hot-swappable LLM clients.
-
----
-
-## 🏛️ High-Velocity Sprint Architecture
-
-```
-                      AI2B LOOP TROOPS ARCHITECTURE
-                                    │
-                     User Data Upload (dataset.csv)
-                                    │
-                                    ▼
-       ┌────────────────────────────────────────────────────────┐
-       │             STREAMLIT INTERACTION LAYER                │
-       │  Dynamic Data Ingestion & Visualization (app/main.py)  │
-       └────────────────────────────┬───────────────────────────┘
-                                    │
-                                    ▼
-       ┌────────────────────────────────────────────────────────┐
-       │                 AI ORCHESTRATION CORE                  │
-       │       Dynamic Prompt Engineering (ai_core/prompts.py)  │
-       │       Provider-Agnostic Client (ai_core/llm_client.py) │
-       └────────────────────────────┬───────────────────────────┘
-                                    │
-                                    ▼
-       ┌────────────────────────────────────────────────────────┐
-       │                   DECISION DELIVERABLE                 │
-       │       Interactive Executive Dashboard & Live Insights  │
-       └────────────────────────────────────────────────────────┘
-```
-
-The architecture strictly separates rapid exploratory data analysis from production app logic, keeping notebooks confined to experimentation.
-
----
-
-## ⚙️ Core Architecture & Component Division
-
-### Verified Component Structure
-- **Interactive UI Cockpit ([`app/main.py`](app/main.py)):** Streamlit application managing user session state, CSV ingestion, data filtering, and real-time visualization.
-- **AI Core Client ([`ai_core/llm_client.py`](ai_core/llm_client.py)):** Abstracted LLM communication layer supporting seamless switching between commercial APIs and local endpoints.
-- **Prompt Engineering Layer ([`ai_core/prompts.py`](ai_core/prompts.py)):** Centralized prompt repository isolating system instructions and output contracts from UI code.
-- **Architectural Specifications ([`PROJECT.md`](PROJECT.md) & [`CONTEXT.md`](CONTEXT.md)):** Formal tracking of sprint requirements, active team directives, and session continuity.
-
----
-
-## 🛠️ Production Quickstart
-
-### 1. Environment Setup
-Create an isolated environment and install application dependencies:
 ```powershell
-# Create and activate virtual environment
+cd c:\Users\palla\Downloads\FinsightAI
 python -m venv .venv
 .\.venv\Scripts\activate
+pip install -r requirements.txt
+copy .env.example .env
 
-# Install requirements
-pip install -r app/requirements.txt
+# Sync Lombardia data + seed DuckDB
+pip install -e bankbench-data-sync
+python scripts/sync_and_seed.py
 
-# Configure environment variables
-cp .env.example .env
-```
+# Terminal 1 — API
+uvicorn backend.main:app --reload --port 8000
 
-### 2. Launch the Cockpit
-Start the Streamlit dashboard in development mode:
-```powershell
-# Launch interactive application
+# Terminal 2 — UI (team dashboard)
 streamlit run app/main.py
 ```
 
----
+In the sidebar, switch to **Live API (FastAPI)** to use the real backend.
 
-**Author:** Francesco Colombini  
-<<<<<<< HEAD
-[GitHub Profile](https://github.com/FRA-0023) · [LinkedIn](https://www.linkedin.com/in/francescocolombini/)
-=======
-[GitHub Profile](https://github.com/FRA-0023) · [LinkedIn](https://www.linkedin.com/in/francescocolombini/)
->>>>>>> a6a2edc70d8a3e47231e932edea95f7633307fe7
+## Demo Query
+
+```
+Assess a €750k sustainability-linked equipment loan for EcoTex Milano, a textile manufacturer in Milan.
+```
+
+## LLM provider (optional)
+
+The executive summary is the only LLM-generated field; every score is deterministic,
+so the demo runs with no provider configured. Providers are tried in order:
+
+1. **Amazon Bedrock** — set `AWS_BEARER_TOKEN_BEDROCK` in `.env` (or standard
+   `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` / `AWS_SESSION_TOKEN`)
+2. **Google Gemini** — set `GEMINI_API_KEY`
+3. **Deterministic template** — no credentials needed
+
+The `audit_trail` in every response records which provider produced the summary.
+
+Credentials live only in `.env`, which is gitignored. Never commit them.
+
+## Execution modes
+
+The dashboard resolves an evaluation in three stages, so it never hard-depends on
+a running backend:
+
+| Mode | Banner | When |
+|---|---|---|
+| `LIVE_API` | 🟢 | FastAPI reachable over HTTP (local two-process setup) |
+| `IN_PROCESS` | 🔵 | No HTTP backend; the same pipeline runs inside the Streamlit process |
+| `DETERMINISTIC_FALLBACK` | 🟡 | Pipeline unavailable, or "Demo Safe" selected in the sidebar |
+
+`IN_PROCESS` is what makes single-process hosting work: identical scoring code and
+identical numbers, just without the network hop.
+
+## Manual document intake
+
+A loan officer can upload supporting documents (PDF, DOCX, TXT, MD, CSV) from the
+**Manual Document Intake** panel. Each file is chunked into the same `documents`
+table the seeded reports use, so BM25 retrieval picks it up with no change to the
+retrieval or scoring path, and the chunks appear in the Grounded Evidence Explorer
+on the next assessment.
+
+Notes:
+
+- A document is attached to a company, and retrieval is filtered by company, so the
+  upload resolves a real `company_id` and is rejected if none matches. An
+  unattached document would be silently unretrievable.
+- Re-uploading the same file replaces its chunks rather than duplicating them
+  (documents are keyed by content hash).
+- Uploads add **evidence**, not score movement. Financial and ESG scores stay
+  deterministic and are driven by the financials table.
+- Scanned PDFs with no text layer are rejected with an explanation; they would
+  need OCR.
+- The DuckDB file is ephemeral on Streamlit Cloud, so uploads reset when the app
+  restarts.
+
+## Voice analytics console
+
+Ask an analytics question by voice or text. Audio is transcribed with Gemini
+(which accepts inline audio, so no separate STT provider is needed), then the
+question is translated to DuckDB SQL and executed.
+
+Because an LLM writes that SQL, three independent guards contain it:
+
+1. The live schema is read from DuckDB and injected into the prompt, so the model
+   sees real column names instead of guessing them.
+2. `guard_sql` rejects anything that is not a single read-only `SELECT`/`WITH`,
+   blocks write and admin keywords on word boundaries, and enforces a row limit.
+3. Execution prefers a `read_only` DuckDB connection, so writes fail at the engine
+   level even if the guard were bypassed.
+
+The generated SQL is always shown in the UI, so every answer is auditable.
+
+Voice Analytics answers from DuckDB even without an LLM key. A Bedrock API key
+(prefix `ABSK`) or `GEMINI_API_KEY` enables the microphone and richer wording.
+
+## Deploy to Streamlit Community Cloud
+
+The DuckDB file is gitignored and self-seeds on first request, so no data setup is
+needed at deploy time.
+
+1. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub
+2. **New app** → **Deploy a public app from GitHub**
+3. Repository `Pallab9999/finsight-ai`, branch `main`, main file path `app/main.py`
+4. Optional — under **Advanced settings → Secrets**, add a provider key
+   (Streamlit exposes secrets as environment variables):
+
+   ```toml
+   AWS_BEARER_TOKEN_BEDROCK = "ABSK..."
+   GEMINI_API_KEY = "your-key"
+   ```
+
+5. **Deploy**
+
+The app boots with local DuckDB scoring. Typed Voice Analytics questions work
+without secrets; the microphone needs a valid Bedrock or Gemini key.
+
+## Project Layout
+
+```
+FinsightAI/
+├── app/                    # Team Streamlit UI (from ai2b-loop-troops)
+├── bankbench-data-sync/    # Lombardia data ingestion (from ai2b-loop-troops)
+├── backend/                # FastAPI + agent + tools
+├── analytics/              # Deterministic scoring engines
+├── ingestion/              # DuckDB loaders
+├── data/finsight.duckdb    # Structured data for tools
+└── scripts/                # sync_and_seed.py, seed_demo.py
+```

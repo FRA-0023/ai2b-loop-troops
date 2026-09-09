@@ -1,47 +1,36 @@
-# Environments
+# Secrets — never commit
 .env
+.env.*
+!.env.example
+
+# Virtualenvs
 .venv/
 venv/
-env/
 
-# Python Cache
+# Python
 __pycache__/
-*.py[cod]
-*.class
+*.pyc
+*.egg-info/
+dist/
+build/
 .pytest_cache/
 
-# Jupyter / Data Science / Machine Learning
-.ipynb_checkpoints/
-*.parquet
-*.csv
-*.tsv
-*.json
-*.sqlite3
+# Generated databases
+*.duckdb
+*.duckdb.wal
 *.db
-*.pt
-*.pth
-*.h5
-*.pkl
-*.model
+*.sqlite
+*.sqlite3
 
-# Marketing / Media / Design
-*.mp4
-*.mov
-*.png
-*.jpg
-*.jpeg
-*.svg
-*.fig
+# Local data
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+app_backup/
+_upstream_app/
 
-# MacOS
+# OS / editor
 .DS_Store
-
-# Ignore all contents of data folder, except sample demo files and .gitkeep
-/data/*
-!/data/.gitkeep
-!/data/sample_balance_sheet_cee_2024.csv
-!/data/sample_esg_audit_ecotex.pdf
-.agents
-
-# Office temporary files
+Thumbs.db
 ~$*
