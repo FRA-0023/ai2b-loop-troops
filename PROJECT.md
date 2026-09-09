@@ -1087,7 +1087,7 @@ UI should show a useful state instead of a blank screen.
 # 22. Repository Structure
 
 ```text
-ai2b-loop-troops/
+finsight-ai/
 │
 ├── app.py                         # Streamlit entry point
 ├── README.md
@@ -1390,3 +1390,4 @@ Do not try to prove that FinSight can do everything.
 Prove that it can take a real banking question, combine structured financial data with evidence from documents and economic context, calculate a transparent result, simulate an alternative, and explain the decision to a human.
 
 That is the product.
+

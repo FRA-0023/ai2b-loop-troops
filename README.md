@@ -10,7 +10,7 @@ This repository contains the integrated FinSight AI platform, including:
 ## Quick Start
 
 ```powershell
-git clone https://github.com/FRA-0023/ai2b-loop-troops.git
+git clone https://github.com/FRA-0023/finsight-ai.git
 cd ai2b-loop-troops
 python -m venv .venv
 .\.venv\Scripts\activate
@@ -113,7 +113,7 @@ needed at deploy time.
 
 1. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub
 2. **New app** → **Deploy a public app from GitHub**
-3. Repository `FRA-0023/ai2b-loop-troops`, branch `main`, main file path `app/main.py`
+3. Repository `FRA-0023/finsight-ai`, branch `main`, main file path `app/main.py`
 4. Optional — under **Advanced settings → Secrets**, add a provider key
    (Streamlit exposes secrets as environment variables):
 
@@ -139,5 +139,6 @@ FinsightAI/
 ├── data/finsight.duckdb    # Structured data for tools
 └── scripts/                # sync_and_seed.py, seed_demo.py
 ```
+
 
 
